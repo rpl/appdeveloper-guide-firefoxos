@@ -1,0 +1,16 @@
+The App Developer's Guide To The FirefoxOS:
+
+- Simulator: Install & Use
+- App Types: hosted & packaged
+  short offline/permissions considerations
+- manifest.webapp example and what is origin,
+  type privileged and permissions,
+  how to validate your webapp manifest
+- hosted app: workflow, tips and tricks
+  (1 app x origin, application cache debugging and tips,
+  privileges available, publishing options, install page)
+- packaged app: workflow, tips and tricks
+  (package.zip, privileges, install page, package mini manifest)
+- openwebapps template and tools
+  volo, mortar, marketplace reference apps,
+  more stubs and examples, gaia ui building blocks

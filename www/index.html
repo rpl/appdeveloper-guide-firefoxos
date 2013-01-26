@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <!-- Use this installation button to install locally without going
+         through the marketpace (see app.js) -->
+    <!-- <button id="install-btn">Install</button>     -->
+
+    <x-view>
+      <header>
+        <button class="prev hidden">Prev</button>
+        <h1>FirefoxOS App Days</h1>
+        <button class="next">Next</button>
+      </header>
+
+      <x-view class="open">
+        <img src="img/firefoxOS-app-days_graphic_RGB.png" class="title-image"/>
+        <b class="title">The App Developer's Guide To The FirefoxOS</b>
+        <test></test>
+        <div class="name">
+          <p>Luca Greco, Mozilla Community Contributor<p>
+          <p>luca.greco@alcacoop.it</p>
+          <p>January 26, 2013</p>
+          <p>
+            <a href="http://rpl.github.com/appdeveloper-guide-firefoxos">
+              http://rpl.github.com/appdeveloper-guide-firefoxos
+            </a>
+          </p>
+        </div>
+      </x-view>
+
+      <!-- <x-view> -->
+      <!--   <button id="install-btn">Install</button> -->
+      <!-- </x-view> -->
+
+      <x-view>
+        <h1>Who are u? and what r u doing on my phone?!?!?</h1>
+        <ul>
+          <li>
+            <a href="https://hacks.mozilla.org/2012/11/hacking-firefox-os/" target="new">
+              Wrote "Hacking FirefoxOS" @ MozHacks
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/rpl/r2d2b2g" target="new">
+              Contributing to "FirefoxOS Simulator" @ GitHub
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/rpl" target="new">
+              Mozilla Community Contributor <br/>
+              Dev @ ALCA Società Cooperativa
+            </a>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>FirefoxOS: OpenEngineering</h1>
+        <ul>
+          <li>
+            <i class="foundicon-globe bigger"></i>
+            <i class="foundicon-plus middle-align"></i>
+            <i class="foundicon-tools bigger"></i>
+            <i class="foundicon-plus middle-align"></i>
+            <i class="foundicon-heart bigger"></i>
+          </li>
+          <li>
+            <a href="http://andreasgal.com/2013/01/22/open-engineering/">
+              http://andreasgal.com/2013/01/22/open-engineering/
+            </a>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>
+          <a href="https://developer.mozilla.org/en-US/docs/Apps/For_Web_developers">
+            Apps for Web Developers
+          </a>
+        </h1>
+        <ul>
+          <li>            
+            Use responsive Web design to look good and work well on all devices.
+          </li>
+          <li>
+            Charge money for apps.
+          </li>
+          <li>
+            Provide a way to identify users.
+          </li>
+          <li>
+            Enable offline caching so the app can be used when the device is not on the Internet.
+          </li>
+          <li>
+            Store data locally using either IndexedDB or localStorage.
+          </li>
+          <li>
+            Launch the app natively (with an icon on the desktop or the home screen).
+          </li>
+          <li>
+            Use device APIs to interact with hardware, such as geolocation and orientation.
+          </li>
+          <li>
+            Give users a way to give you feedback.
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>Simulator: Install & Use</h1>
+        <ul>
+          <li>
+            <a href="https://addons.mozilla.org/addon/firefox-os-simulator/" target="new">
+              https://addons.mozilla.org/addon/firefox-os-simulator/
+            </a>
+          </li>
+          <li>Firefox Desktop restartless addon</li>
+          <li>"FirefoxOS running on your desktop" inside (a.k.a. b2g-desktop)</li>
+          <li>installs app without marketplace upload or install page</li>
+          <li>
+            <i class="foundicon-globe bigger"></i>
+            <i class="foundicon-plus middle-align"></i>
+            <i class="foundicon-idea bigger"></i>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>App Types</h1>
+        <ul>
+          <li>
+            <i class="foundicon-globe bigger"></i>
+            <span class="middle-align">hosted</span>
+          </li>
+          <li> & </li>
+          <li>
+            <i class="foundicon-inbox bigger"></i>
+            <span class="middle-align">packaged</span>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>Offline Mode</h1>
+        <ul>
+          <li>Hosted: appcache manifest</li>
+          <li>Packaged: resources from package.zip</li>
+          <li>
+            <i class="foundicon-inbox bigger"></i>
+          </li>
+        </ul>
+      </x-view>
+      <x-view>
+        <h1>Permissions</h1>
+        <ul>
+          <li>Hosted: classic webapp and non-critical native permissions</li>
+          <li>Packaged: extended native-app like permissions</li>
+          <li>
+            <i class="foundicon-lock bigger"></i>
+            <i class="foundicon-unlock bigger"></i>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>manifest.webapp</h1>
+        <pre>
+{
+  "name": "App Name",
+  "description": "application description",
+  "launch_path": "/index.html", 
+  "appcache_path": "/manifest.appcache", 
+  "developer": {
+    "name": "Developer Name", 
+    "url": "http://anything.any"
+  },
+  "installs_allowed_from": ["*"], 
+  "locales": {
+    "it": {
+      "name": "Nome Applicazione",
+      "description": "descrizione applicazione"
+    },
+    ...
+  },  
+  "default_locale": "en-US",
+  "icons": {
+    "120": "/gaia-chrono-app/icons/chrono-120.png",
+    "60": "/gaia-chrono-app/icons/chrono-60.png"
+  },
+  "orientation": "portrait-primary"  
+}
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>manifest.webapp</h1>
+        <ul>          
+          <li><b>launch_path</b>, <b>appcache_path</b> and <b>icons</b> image urls <br/> are relative to app <b>origin</b></li>
+          <li><b>origin</b>: <i>"http|https"</i> + <i>"domain"</i> + <i>"port"</i></li>
+          <li><b>appcache_path</b> is optional</li>
+          <li><b>installs_allowed_from</b> restrict market urls (<b>"*"</b> as any)</li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>type privileged and permissions</h1>
+        <pre>
+{
+  ...
+  "type": "privileged",
+  "permissions": {
+    "geolocation": {},
+    "systemXHR": {},
+    "device-storage:pictures": {
+       "description": "access picture to show and send",
+       "access": "readonly"
+    },
+  }
+}
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>validate your webapp manifest</h1>
+        <ul>          
+          <li>online</li>
+          <li>
+            <a href="https://marketplace.firefox.com/developers/validator">
+              https://marketplace.firefox.com/developers/validator
+            </a>
+          </li>
+          <li>offline</li>
+          <li>
+            <a href="https://github.com/mattbasta/app-validator">
+              https://github.com/mattbasta/app-validator
+            </a>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>Hosted App: workflow</h1>
+        <ol class="inset">
+          <li>tweak an existent webapp or create a new one</li>
+          <li>develop/debug on an desktop browser (mocking WebAPI on a desktop browser)</li>
+          <li>create a manifest</li>
+          <li>test install/uninstall on simulator/device</li>
+          <li>test WebAPI on simulator/device</li>
+          <li>loop until ready</li>
+          <li>push on a configured http server</li>
+          <li>submit manifest url to marketplace.firefox.com</li>
+        </ol>
+      </x-view>
+
+      <x-view>
+        <h1>Hosted App: tips and tricks</h1>
+        <ul>
+         <li>only 1 application x origin</li>
+         <li>...</li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>application cache debugging and tips</h1>
+        <ul>
+          <li><pre>volo appcache</pre> or <a href="http://appcache.rawkes.com/">http://appcache.rawkes.com</a></li>
+          <li>use webconsole and server logs to detect problems</li>
+          <li>subscribe applicationCache events and print logs</li>
+          <li>DO NOT CACHE your appcache manifests</li>
+          <li>appcache manifest content type: <b>"text/cache-manifest"</b></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1><a href="https://developer.mozilla.org/en-US/docs/HTML/Using_the_application_cache">manifest.appcache</a></h1>
+        <pre>
+CACHE MANIFEST
+# v1 2011-08-14
+# This is another comment
+index.html
+cache.html
+style.css
+image1.png
+
+# Use from network if available
+NETWORK:
+network.html
+
+# Fallback content
+FALLBACK:
+/ fallback.html
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>privileges</h1>
+        <ul>
+          <li>hosted apps can use only classic webapps privileges</li>
+          <li><b>geolocation</b>, <b>storage</b></li>
+          <li>and non critical new privileges</li>
+          <li><b>alarms</b>, <b>fmradio</b>, <b>desktop-notification</b></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>publishing</h1>
+        <ul>
+          <li>on github (e.g. <pre>volo ghdeploy</pre>) or any http server</li>
+          <li>webapp manifest content type:</li>
+          <li><b>"application/x-web-app-manifest+json"</b></li>
+          <li>webapp manifest server by same application <b>origin</b></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>install page</h1>
+        <pre>
+var manifest = "http://mydomain/manifest.webapp";
+var request = navigator.mozApps.install(manifest);
+request.onsuccess = function() {
+  alert("success: " + this.result.origin);
+};
+request.onerror = function() {
+  alert("error: " + this.error.name);
+};
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>Packaged App: workflow</h1>
+        <ol class="inset">
+          <li>(mostly) same as hosted</li>
+          <li>create a manifest (more permissions and optional features available)</li>
+          <li>test install/uninstall on simulator/device</li>
+          <li>test WebAPI on simulator/devicer</li>
+          <li>loop until ready</li>
+          <li>create a package.zip</li>
+          <li>submit package to marketplace.firefox.com</li>
+        </ol>
+      </x-view>
+
+      <x-view>
+        <h1>Packaged App: workflow, tips and tricks</h1>
+        <ul>
+          <li>no per origin limit</li>
+          <li>packaged app could be <b>"type":"priviliged"</b></li>
+          <li>priviliged app can use extented webapps privileges: <b>systemXHR</b>, <b>tcp-socket</b>, <b>contacts</b>,
+            <b>browser</b>, <b>device-storage:pictures|videos|music|sdcard</b>, 
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>install page</h1>
+        <pre>
+var manifest = "http://mydomain/package.manifest";
+var request = navigator.mozApps.installPackage(manifest);
+request.onsuccess = function() {
+  alert("success: " + this.result.origin);
+};
+request.onerror = function() {
+  alert("error: " + this.error.name);
+};
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>package mini manifest</h1>
+        <pre>
+{
+  "name": "Packaged App Name",
+  "package_path": "http://mydomain/package.zip",
+  "developer": {
+    "name": "Packaged App Developer",
+    "url": "http://anydomain.any"
+  },
+  "version": "1.0"
+}
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1><a href="https://hacks.mozilla.org/2013/01/introducing-web-activities/">
+            WebActivities
+        </a></h1>
+
+        <pre>
+var pick = new MozActivity({
+   name: "pick",
+   data: {
+       type: ["image/png", "image/jpg", "image/jpeg"]
+    }
+});
+
+pick.onsuccess = function () { 
+    // Create image and set the returned blob as the src
+    var img = document.createElement("img");
+    img.src = window.URL.createObjectURL(this.result.blob);
+ 
+    // Present that image in your app
+    var imagePresenter = document.querySelector("#image-presenter");
+    imagePresenter.appendChild(img);
+};
+ 
+pick.onerror = function () { 
+    // If an error occurred or the user canceled the activity
+    alert("Can't view the image!");
+};
+        </pre>
+      </x-view>
+
+      <x-view>
+        <h1>More Docs</h1>
+        <ul>
+          <li>
+            <a href="http://jlongster.github.com/writing-webapps/">
+              Writing (good) Webapps
+            </a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/WebAPI/Doc_status">
+              WebAPI (Doc Status)
+            </a>
+          </li>
+          <li>
+            <a href="https://wiki.mozilla.org/WebAPI/">
+              WebAPI (Wiki)
+            </a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Apps/Apps_JavaScript_API">
+              mozApps API
+            </a>
+          </li>
+          <li>
+            <a href="http://mxr.mozilla.org/mozilla-central/source/extensions/cookie/Permission.txt">
+              Permissions.txt
+            </a>
+          </li>
+          <li>
+            <a href="http://mxr.mozilla.org/mozilla-central/source/dom/apps/src/PermissionsTable.jsm">
+              PermissionsTable.jsm
+            </a>
+          </li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>OpenWebApps Templates & Tools</h1>
+      </x-view>
+
+      <x-view>
+        <h1>Create new OpenWebApps</h1>
+        <ul>
+          <li>volo & mortar</li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>volo</h1>
+        <ul>
+          <li><a href="http://volojs.org">http://volojs.org</a></li>
+          <li>webapps development automation tool</li>
+          <li><pre>npm install volo -g</pre></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>mortar</h1>
+        <ul>
+          <li><a href="http://github.com/mozilla/mortar">http://github.com/mozilla/mortar</a></li>
+          <li>a collection of application templates:</li>
+          <li><pre>volo create myapp mozilla/TEMPLATE_NAME</pre></li>
+          <li><a href="http://github.com/mozilla/mortar-app-stub">mortar-app-stub</a></li>
+          <li><a href="http://github.com/mozilla/mortar-list-detail">mortar-list-detail</a></li>
+          <li><a href="http://github.com/mozilla/mortar-tab-view">mortar-tab-view</a></li>
+          <li><a href="http://github.com/mozilla/mortar-game-stub">mortar-game-stub</a></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>FirefoxOS and OpenWebApps Templates, Examples and Stubs</h1>
+      </x-view>
+
+      <x-view>
+        <h1>Marketplace Reference Apps</h1>
+        <ul>
+          <li><a href="https://marketplace.firefox.com/developers/docs/apps/chrono">Chrono</a></li>
+          <li><a href="https://marketplace.firefox.com/developers/docs/apps/face_value">Face Value</a></li>
+          <li><a href="https://marketplace.firefox.com/developers/docs/apps/roller">Roller</a></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>FirefoxOS More Reference Apps and Stubs</h1>
+        <ul>
+          <li><a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">FirefoxOS Boilerplate App (hosted & packaged)</a></li>
+          <li><a href="https://github.com/Jaxo/fxosstub">Jaxo's FirefoxOS Stub (hosted)</a></li>
+          <li><a href="https://github.com/myk/packaged-app-stub">Myk's Packaged App Stub (packaged)</a></li>
+        </ul>
+      </x-view>
+
+      <x-view>
+        <h1>Gaia UI Building Blocks</h1>
+        <ul>
+          <li><a href="https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks"></a>https://github.com/mozilla-b2g/Gaia-UI-Building-Blocks</li>
+          <li><a href="http://telefonicaid.github.com/Gaia-UI-Building-Blocks">Gaia UI Building Blocks Preview</a></li>
+        </ul>
+      </x-view>
+
+      <x-view style="overflow: hidden;">
+        <img src="img/firefoxOS-app-days_graphic_RGB.png" style="float: left; width: 30%;"/>
+        <b style="position: relative; width: 55%; top: 10%; font-size: 5em;">Let's App!</b>
+      </x-view>
+
+    </x-view>
+    <div class="loading">Loading...</div>
+
+    <!-- Using require.js, a module system for javascript, include the
+         js files. This loads "main.js", which in turn can load other
+         files, all handled by require.js:
+         http://requirejs.org/docs/api.html#jsfiles -->
+    <script type="text/javascript"
+            data-main="js/init.js"
+            src="js/lib/require.js"></script>
+  </body>
+</html>

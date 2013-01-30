@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "name": "The App Developer's Guide To The FirefoxOS",
+  "description": "collection of concepts and links useful to FirefoxOS App Days participants",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/img/icons/appdays-16.png",
+    "48": "/img/icons/appdays-48.png",
+    "128": "/img/icons/appdays-128.png"
+  },
+  "installs_allowed_from": ["*"],
+
+  "developer": {
+    "name": "Luca Greco <luca.greco@alcacoop.it>",
+    "url": "http://github.com/rpl"
+  },
+
+  "locales": {
+    "it": {
+      "name": "Guida per sviluppatori di App per FirefoxOS",
+      "description": "una collezione di concetti e link utili ai partecipanti del FirefoxOS App Days"
+    }
+  },
+
+  "default_locale": "en"
+}

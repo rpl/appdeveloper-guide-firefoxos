@@ -1,4 +1,3 @@
-
 (function() {
 
     // Utility
@@ -81,7 +80,11 @@
 		}
 		cssRule += "}";
 
-		this.original.insertRule(cssRule);
+		if (this.original.insertRule) {
+	    		this.original.insertRule(cssRule);
+        	} else if (this.original.appendRule) {
+            		this.original.appendRule(cssRule);
+          	}
 		this.initKeyframes();
 	};
 
